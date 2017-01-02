@@ -14,9 +14,10 @@
     "styles:dev": "postcss -c postcss.dev.json",
     "js:dev": "./node_modules/rollup/bin/rollup -c",
     "templates:dev": "node build/metalsmith.js",
+    "publish": "./node_modules/gh-pages/bin/gh-pages -d ./ -b gh-pages",
     "lint": "./node_modules/standard/bin/cmd.js assets/js/**/*.js && ./node_modules/stylelint/bin/stylelint.js assets/css/*.css"
   },
-  "author": "",
+  "author": "yuvilio",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^6.6.0",
@@ -25,6 +26,7 @@
     "babel-preset-es2015-rollup": "^3.0.0",
     "css-mqpacker": "^5.0.1",
     "cssnano": "^3.9.1",
+    "gh-pages": "^0.12.0",
     "metalsmith": "^2.3.0",
     "metalsmith-collections": "^0.9.0",
     "metalsmith-drafts": "0.0.1",

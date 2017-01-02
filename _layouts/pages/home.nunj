@@ -1,0 +1,66 @@
+{% extends "layout.nunj" %}
+
+{# for now empty  #}
+
+{% block content %}
+  <main class="main-wrap ">
+
+    {% for post in collections.posts %}
+
+
+      <div class="section post-tease">
+        <div class="row medium-unstack align-center ">
+
+          <div class="column tablet-10 large-8">
+            <header>
+              <a class="title" href="{{ post.path }}">
+                {{post.title}}
+              </a>
+
+              <time>{{post.stats.atime | date}}</time>
+            </header>
+
+            <div class="post-content">
+
+
+              <div class="excerpt">
+
+                {{post.excerpt}}
+              </div>
+
+
+            </div><!-- /.posts -->
+            <footer>
+              <div class="tags">
+                {% for tag in post.tags %}
+                    <a href="/tag/{{post.tagsUrlSafe[loop.index - 1]}}">{{tag}}</a>
+                {% endfor %}
+              </div>
+            </footer>
+          </div> <!-- /.column -->
+
+
+
+
+
+
+        </div> <!-- /.row -->
+      </div> <!-- /.section -->
+
+
+    {% endfor %}
+
+
+
+
+    {# index.md contents  {{contents}} #}
+
+  </main>
+{% endblock %}
+
+{#
+  {% for cta in ctas %}
+    key: {{ cta.key }}<br>
+    name: {{cta.name}}<br>
+  {% endfor %}
+  #}
