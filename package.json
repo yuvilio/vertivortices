@@ -1,21 +1,28 @@
 {
-  "name": "chatting-modules",
+  "name": "vertivortices",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/metalsmith.js",
+  "engines": {
+    "node": "6.9.0"
+  },
   "scripts": {
-    "browser_sync": "browser-sync start --server _build --no-ui --no-notify",
+    "start": "npm run browser_sync & NODE_ENV=development DEBUG=metalsmith:* ./node_modules/nodemon/bin/nodemon.js --exec 'npm run lint && npm run build:dev && browser-sync reload'",
+    "browser_sync": "browser-sync start --server dist --no-ui --no-notify",
     "build:dev": "npm run templates:dev && npm run styles:dev && npm run js:dev",
     "build": "node build/metalsmith.js && postcss -c postcss.prod.json",
     "styles:dev": "postcss -c postcss.dev.json",
-    "js:dev"  : "./node_modules/rollup/bin/rollup -c",
+    "js:dev": "./node_modules/rollup/bin/rollup -c",
     "templates:dev": "node build/metalsmith.js",
-    "test": "standard && stylelint css/*.css"
+    "lint": "./node_modules/standard/bin/cmd.js assets/js/**/*.js && ./node_modules/stylelint/bin/stylelint.js assets/css/*.css"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^6.6.0",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-preset-env": "^1.1.4",
+    "babel-preset-es2015-rollup": "^3.0.0",
     "css-mqpacker": "^5.0.1",
     "cssnano": "^3.9.1",
     "metalsmith": "^2.3.0",
