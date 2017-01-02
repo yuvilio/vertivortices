@@ -14,7 +14,7 @@
     "styles:dev": "postcss -c postcss.dev.json",
     "js:dev": "./node_modules/rollup/bin/rollup -c",
     "templates:dev": "node build/metalsmith.js",
-    "publish": "./node_modules/gh-pages/bin/gh-pages -d ./ -b gh-pages",
+    "publish": "./node_modules/gh-pages/bin/gh-pages -d dist -b gh-pages",
     "lint": "./node_modules/standard/bin/cmd.js assets/js/**/*.js && ./node_modules/stylelint/bin/stylelint.js assets/css/*.css"
   },
   "author": "yuvilio",
