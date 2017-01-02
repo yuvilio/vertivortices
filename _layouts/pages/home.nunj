@@ -3,10 +3,10 @@
 {# for now empty  #}
 
 {% block content %}
-  <main class="main-wrap ">
+  <main class="main-wrap">
 
+    <h2>recent posts</h2>
     {% for post in collections.posts %}
-
 
       <div class="section post-tease">
         <div class="row medium-unstack align-center ">
@@ -24,16 +24,16 @@
 
 
               <div class="excerpt">
-
                 {{post.excerpt}}
               </div>
 
 
             </div><!-- /.posts -->
             <footer>
+              <p>tags</p>
               <div class="tags">
                 {% for tag in post.tags %}
-                    <a href="/tag/{{post.tagsUrlSafe[loop.index - 1]}}">{{tag}}</a>
+                    <a href="/tag/{{tag.slug}}">{{tag.name}}</a>
                 {% endfor %}
               </div>
             </footer>

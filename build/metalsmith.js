@@ -6,13 +6,13 @@ var metadata = require('metalsmith-metadata');
 var markdown = require('metalsmith-markdown');
 var permalinks = require('metalsmith-permalinks');
 var layouts = require('metalsmith-layouts');
+var inPlace = require('metalsmith-in-place');
 var collections = require('metalsmith-collections');
-// var serve = require('metalsmith-serve');
 var watch = require('metalsmith-watch');
-// var assets = require('metalsmith-assets');
 var nunjucks = require('nunjucks');
 var nunjucksDate = require('nunjucks-date');
 var metalsmith = Metalsmith(__dirname);
+var tags              = require('metalsmith-tags');
 
 
 //configure templating engine you'll use with defaults
@@ -44,6 +44,11 @@ var metadata_opts = {
 
 // Page collections like all pages or all posts
 var site_collections = {
+  posts: {
+    pattern: 'posts/*.md',
+    sortBy: 'date',
+    reverse: true
+  }
 };
 
 // Run Metalsmith
@@ -54,11 +59,44 @@ metalsmith
   .use(collections(site_collections))
   .use(markdown())
   .use(permalinks({
-      pattern: ':title'
+    // original options would act as the keys of a `default` linkset,
+    pattern: ':title',
+    date: 'YYYY',
+
+    // each linkset defines a match, and any other desired option
+    linksets: [{
+       match: { collection: 'posts' },
+      //  pattern: 'posts/:title'
+       pattern: 'blog/:date/:title',
+       date: 'mmddyy'
+    },{
+       match: { collection: 'pages' },
+       pattern: ':title'
+    }]
     }))
+    .use(tags({
+      handle: 'tags', //frontmatter key
+      path:'tag/:tag.html', //aggresgate pages
+      layout: 'archives/tag.nunj',
+      sortBy: 'date',
+      reverse: true,
+      skipMetadata: false,
+      // Any options you want to pass to the [slug](https://github.com/dodo/node-slug) package.
+      // slug: {mode: 'rfc3986'}
+  }))
+  // .use(inPlace({ //apply nunjucks for variable interpolation
+  //     engine: 'nunjucks',
+  //     directory: './_layouts'
+  //   }))
   .use(layouts({
       engine: 'nunjucks',
-      directory: '../_layouts'
+      directory: '../_layouts',
+      pattern: [
+      '**',
+      '!json-data/*',
+      // Skip over the partials that were already processed
+      '!partials/*',  '!partials/*/*'
+    ]
   }))
   .destination('../dist')
   .build(function (err, files) {
@@ -68,4 +106,3 @@ metalsmith
       throw err;
     }
   });
-console.log("metalsmith generating site")

@@ -1,5 +1,5 @@
 ---
-layout: layout.nunj
+layout: pages/page.nunj
 title: About
 position: 99
 ---
