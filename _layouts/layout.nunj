@@ -16,7 +16,7 @@
       <!-- Place favicon.ico in the root directory -->
     #}
 
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
 
   </head>
 
@@ -34,7 +34,7 @@
     {# general scripts #}
 
     {# scripts to combine with gulp-useref #}
-    <script src="/assets/js/all.js"></script>
+    <script src="/assets/js/main.js"></script>
 
     <!-- test -->
 

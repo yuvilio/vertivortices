@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "browser_sync": "browser-sync start --server _build --no-ui --no-notify",
-    "build:dev": "node build/metalsmith.js && postcss -c postcss.dev.json",
+    "build:dev": "npm run templates:dev && npm run styles:dev && npm run js:dev",
     "build": "node build/metalsmith.js && postcss -c postcss.prod.json",
     "styles:dev": "postcss -c postcss.dev.json",
+    "js:dev"  : "./node_modules/rollup/bin/rollup -c",
     "templates:dev": "node build/metalsmith.js",
     "test": "standard && stylelint css/*.css"
   },
@@ -36,6 +37,10 @@
     "postcss-extend": "^1.0.5",
     "postcss-import": "^9.0.0",
     "postcss-nested": "^1.0.0",
+    "rollup": "^0.39.2",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1",
     "tachyons": "^4.6.1"
   },
   "dependencies": {}

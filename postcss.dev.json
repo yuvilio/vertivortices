@@ -9,7 +9,7 @@
     "autoprefixer"
   ],
   "input": "./assets/css/main.css",
-  "output": "./dist/css/main.css",
+  "output": "./dist/assets/css/main.css",
   "map": {
     "inline": false
   }
