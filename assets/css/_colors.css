@@ -1,0 +1,15 @@
+:root {
+
+  /* main palette */
+  /* Coolors Exported Palette - coolors.co/fcb97d-afbfc0-ffd447-03cea4-6689a1 */
+  --color1: hsla(28%, 95%, 74%, 1);
+  --color2: hsla(184%, 12%, 72%, 1);
+  --color3: hsla(46%, 100%, 64%, 1);
+  --color4: hsla(168%, 97%, 41%, 1);
+  --color5: hsla(204%, 24%, 52%, 1);
+}
+
+body {
+  background-color: var(--color2);
+  background-color: tomato;
+}

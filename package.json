@@ -2,20 +2,25 @@
   "name": "vertivortices",
   "version": "0.1.0",
   "description": "",
-  "main": "build/metalsmith.js",
+  "main": "index.js",
   "engines": {
     "node": "6.9.0"
   },
   "scripts": {
-    "start": "npm run browser_sync & NODE_ENV=development DEBUG=metalsmith:* ./node_modules/nodemon/bin/nodemon.js --exec 'npm run lint && npm run build:dev && browser-sync reload'",
+    "start" : "NODE_ENV=development DEBUG=metalsmith:* npm run browser_sync & npm run watch-templates & npm run watch-css & npm run watch-js  ",
+    "watch-js": "./node_modules/nodemon/bin/nodemon.js  --watch assets/js/**/*.* --ext js --exec 'npm run lint:js && npm run js:dev && browser-sync reload'",
+    "watch-css": "./node_modules/nodemon/bin/nodemon.js  --watch assets/css/**/*.* --ext css --exec 'npm run lint:css && npm run styles:dev && browser-sync reload'",
+    "watch-templates": "./node_modules/nodemon/bin/nodemon.js  --watch '_layouts/**/*.*' --watch 'content/**/*.*' --ext \"md nunj\" --exec 'npm run templates:dev && npm run styles:dev && npm run js:dev && browser-sync reload'",
     "browser_sync": "browser-sync start --server dist --no-ui --no-notify",
     "build:dev": "npm run templates:dev && npm run styles:dev && npm run js:dev",
     "build": "node build/metalsmith.js && postcss -c postcss.prod.json",
     "styles:dev": "postcss -c postcss.dev.json",
     "js:dev": "./node_modules/rollup/bin/rollup -c",
-    "templates:dev": "node build/metalsmith.js",
+    "templates:dev": "NODE_ENV=development DEBUG=metalsmith:* & node build/metalsmith.js",
     "publish": "./node_modules/gh-pages/bin/gh-pages -d dist -b gh-pages",
-    "lint": "./node_modules/standard/bin/cmd.js assets/js/**/*.js && ./node_modules/stylelint/bin/stylelint.js assets/css/*.css"
+    "lint:css": "./node_modules/stylelint/bin/stylelint.js assets/css/*.css",
+    "lint:js": "./node_modules/standard/bin/cmd.js assets/js/**/*.js"
+
   },
   "author": "yuvilio",
   "license": "ISC",

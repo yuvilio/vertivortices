@@ -1,4 +1,9 @@
 @charset 'UTF-8';
 
-/* import tachyons in bulk. TODO: import a-la carte? */
-@import './_tachyons';
+/* vendor libraries */
+@import './_tachyons'; /* a-la-carte */
+
+/* theme */
+@import '_colors';
+
+/* components */
