@@ -6,8 +6,12 @@
     "postcss-calc",
     "postcss-custom-properties",
     "postcss-custom-media",
+    "postcss-color-function",
     "autoprefixer"
   ],
+  "postcss-custom-properties": {
+   "preserve": true
+  },
   "input": "./assets/css/main.css",
   "output": "./dist/assets/css/main.css",
   "map": {

@@ -1,10 +1,11 @@
 {
   "use": [
     "postcss-import",
+    "postcss-custom-properties",
     "postcss-nested",
     "postcss-extend",
     "postcss-calc",
-    "postcss-custom-properties",
+    "postcss-color-function",
     "postcss-custom-media",
     "autoprefixer"
     "cssnano",

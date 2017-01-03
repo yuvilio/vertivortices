@@ -27,7 +27,6 @@
     , "value-no-vendor-prefix": true
     , "value-list-comma-space-after": "always"
     , "value-list-comma-space-before": "never"
-    , "custom-property-no-outside-root": true
     , "shorthand-property-no-redundant-values": true
     , "property-case": "lower"
     , "property-no-vendor-prefix": true
