@@ -3,7 +3,8 @@
 var Metalsmith = require('metalsmith');
 // var drafts = require('metalsmith-drafts');
 var metadata = require('metalsmith-metadata');
-var markdown = require('metalsmith-markdown');
+// var markdown = require('metalsmith-markdown');
+var markdownit = require('metalsmith-markdownit');
 var permalinks = require('metalsmith-permalinks');
 var layouts = require('metalsmith-layouts');
 var inPlace = require('metalsmith-in-place');
@@ -57,7 +58,11 @@ metalsmith
   .source('../content')
   .clean(true)
   .use(collections(site_collections))
-  .use(markdown())
+  // .use(markdown())
+  .use(markdownit({
+    typographer: true,
+    html: true
+  }))
   .use(permalinks({
     // original options would act as the keys of a `default` linkset,
     pattern: ':title',
