@@ -7,17 +7,13 @@
     "postcss-calc",
     "postcss-color-function",
     "postcss-custom-media",
-    "autoprefixer"
+    "autoprefixer",
     "cssnano",
-    "css-mqpacker",
-    "postcss-uncss"
+    "css-mqpacker"
   ],
   "input": "./assets/css/main.css",
   "output": "./dist/assets/css/main.css",
   "map": {
     "inline": false
-  },
-  "postcss-uncss": {
-    "html": ["./dist/**/*.html"]
   }
 }

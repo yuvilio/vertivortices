@@ -43,6 +43,12 @@ var metadata_opts = {
   navs: 'metadata/_navs.yaml'
 };
 
+//if running in developmement, additional
+if (process.env.NODE_ENV === 'development'){
+  console.log('here in development');
+  metadata_opts.dev_env = 'metadata/_dev.yaml'
+}
+
 // Paege collections like all pages or all posts
 var site_collections = {
   posts: {
@@ -56,7 +62,7 @@ var site_collections = {
 metalsmith
   .source('../content' )
   .use( metadata( metadata_opts ) )
-  .clean(true)
+  .clean(false)
   .use(collections(site_collections))
   // .use(markdown())
   .use(markdownit({
