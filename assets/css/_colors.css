@@ -8,10 +8,18 @@
   --carribean-green: #03cea4;
   --rackley: #6689a1;
 
+  --text-dark: color(black a(85%));
+
   /* lighten / darken values*/
   --mellow-apricot-light: #feefe1; /* 20% */
   --ash-gray-light: #e8eded;
   --gargoyle-gas-light: #ffecad;
   --carribean-green-light: #3bfcd4;
   --rackley-light: #a5bac8;
+}
+
+body {
+  background-color: var(--mellow-apricot-light);
+  /*color: white;*/
+  color: var(--text-dark);
 }

@@ -3,7 +3,9 @@
 /* vendor libraries */
 @import './_tachyons'; /* a-la-carte */
 
+@import 'misc/_type';
+@import 'components/_teaser-side';
+
 /* theme */
 @import '_colors';
-
 /* components */

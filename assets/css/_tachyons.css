@@ -9,13 +9,13 @@
 @import 'tachyons/src/_images';
 @import 'tachyons/src/_background-size';
 /*@import 'tachyons/src/_background-position';*/
-/*@import 'tachyons/src/_outlines';*/
+@import 'tachyons/src/_outlines';
 /*@import 'tachyons/src/_borders';*/
 /*@import 'tachyons/src/_border-colors';*/
 /*@import 'tachyons/src/_border-radius';*/
 /*@import 'tachyons/src/_border-style';*/
 /*@import 'tachyons/src/_border-widths';*/
-/*@import 'tachyons/src/_box-shadow';*/
+@import 'tachyons/src/_box-shadow';
 @import 'tachyons/src/_code';
 /*@import 'tachyons/src/_coordinates';*/
 @import 'tachyons/src/_clears';
@@ -24,7 +24,7 @@
 @import 'tachyons/src/_floats';
 /*@import 'tachyons/src/_font-family';*/
 /*@import 'tachyons/src/_font-style';*/
-/*@import 'tachyons/src/_font-weight';*/
+@import 'tachyons/src/_font-weight';
 @import 'tachyons/src/_forms';
 @import 'tachyons/src/_heights';
 /*@import 'tachyons/src/_letter-spacing';*/
@@ -39,7 +39,7 @@
 /*@import 'tachyons/src/_rotations';*/
 /*@import 'tachyons/src/_skins';*/
 /*@import 'tachyons/src/_skins-pseudo';*/
-/*@import 'tachyons/src/_spacing';*/
+@import 'tachyons/src/_spacing';
 /*@import 'tachyons/src/_negative-margins';*/
 /*@import 'tachyons/src/_tables';*/
 @import 'tachyons/src/_text-decoration';
@@ -66,3 +66,8 @@
 
 /* Uncomment out the line below to help debug layout issues */
 /* @import 'tachyons/src/_debug'; */
+
+/* override default tachyons variables */
+@custom-media --breakpoint-not-small screen and (min-width: 36em);
+@custom-media --breakpoint-medium screen and (min-width: 36em) and (max-width: 72em);
+@custom-media --breakpoint-large screen and (min-width: 72em);

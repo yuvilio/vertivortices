@@ -1,0 +1,23 @@
+
+:root {
+  --font-sans: "Titillium Web";
+  --font-serif: Caudex;
+}
+
+body {
+  font-family: var(--font-serif);
+}
+
+
+time {
+  font-family: var(--font-sans);
+}
+
+.tags {
+  font-family: var(--font-sans);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

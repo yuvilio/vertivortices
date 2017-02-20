@@ -1,0 +1,9 @@
+/* */
+
+.teaser-side {
+  .title {
+    font-family: var(--font-sans);
+    color: var(--carribean-green);
+    font-weight: bold;
+  }
+}
