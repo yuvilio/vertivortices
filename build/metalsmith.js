@@ -40,10 +40,10 @@ var options = {
 
 // Metadata to be passed to templates
 var metadata_opts = {
-
+  navs: 'metadata/_navs.yaml'
 };
 
-// Page collections like all pages or all posts
+// Paege collections like all pages or all posts
 var site_collections = {
   posts: {
     pattern: 'posts/*.md',
@@ -54,8 +54,8 @@ var site_collections = {
 
 // Run Metalsmith
 metalsmith
+  .source('../content' )
   .use( metadata( metadata_opts ) )
-  .source('../content')
   .clean(true)
   .use(collections(site_collections))
   // .use(markdown())

@@ -13,25 +13,28 @@
       <div class="mw9 center">
         <div class="cf flex-ns flex-row ">
 
-          <div class="w-100 w-two-thirds-ns pv2 ph2 ph4-ns order-1-ns ">
-            <a class="title f3" href="{{ post.path }}">
-              {{post.title}}
-            </a>
+          <div class="w-100 w-75-ns pv2 pv4-ns ph2 ph3-ns order-1-ns ">
+            <header class="title lh-solid tc tl-ns f3 f2-ns mb2">
+              <a class=" " href="{{ post.path }}">
+                {{post.title}}
+              </a>
+            </header>
+
             <div class="excerpt">
               {{post.excerpt}}
             </div>
           </div>
 
 
-          <aside class="w-100 w-third-ns pv2 ph2 ph3-ns moon-gray order-0-ns">
+          <aside class="w-100 w-20-ns pv2 pv4-ns ph2 ph3-ns moon-gray order-0-ns">
             <time class="f5">
               {{post.stats.atime | date}}
             </time>
 
-            <div class="tags f6">
+            <div class="tags f5 i">
               {% for tag in post.tags %}
                   <a href="/tag/{{tag.slug}}">
-                    {{tag.name}},
+                    {{tag.name}} {% if not loop.last %}, {% endif %}
                   </a>
               {% endfor %}
             </div>
