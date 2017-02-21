@@ -10,9 +10,11 @@
 
     {% if dev_env.env %}
       {% include "partials/header-local.nunj" %}
+      <link rel="stylesheet" href="/assets/css/main.css">
     {% else %}
       <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Caudex" rel="stylesheet">
+      <link rel="stylesheet" href="{{ prod_env.sitename }}/assets/css/main.css">
     {% endif %}
 
 
@@ -24,7 +26,6 @@
       <!-- Place favicon.ico in the root directory -->
     #}
 
-    <link rel="stylesheet" href="/assets/css/main.css">
 
   </head>
 
@@ -42,8 +43,13 @@
 
     {# general scripts #}
 
-    {# scripts to combine with gulp-useref #}
-    <script src="/assets/js/main.js"></script>
+    {# sitewide js #}
+    {% if dev_env.env %}
+      <script src="/assets/js/main.js"></script>
+    {% else %}
+      <script src="{{ prod_env.sitename }}/assets/js/main.js"></script>
+    {% endif %}
+
 
     <!-- test -->
 

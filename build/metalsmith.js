@@ -45,8 +45,9 @@ var metadata_opts = {
 
 //if running in developmement, additional
 if (process.env.NODE_ENV === 'development'){
-  console.log('here in development');
   metadata_opts.dev_env = 'metadata/_dev.yaml'
+} else {
+  metadata_opts.prod_env = 'metadata/_prod.yaml'
 }
 
 // Paege collections like all pages or all posts
