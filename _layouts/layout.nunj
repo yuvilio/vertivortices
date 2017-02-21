@@ -32,9 +32,6 @@
 
 
     <header>
-      <div>
-        dev envs: {{ dev_env.env }}
-      </div>
 
       {% include "partials/header-nav.nunj" %}
 

@@ -6,7 +6,6 @@
   <main class="main-wrap ">
 
 
-
     {% for post in collections.posts %}
 
     <div class="teaser-side">
@@ -27,7 +26,7 @@
 
 
           <aside class="w-100 w-20-ns pv2 pv4-ns ph2 ph3-ns moon-gray order-0-ns">
-            <time class="f5">
+            <time class="f5 db mb2">
               {{post.stats.atime | date}}
             </time>
 
