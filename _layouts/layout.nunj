@@ -14,7 +14,7 @@
     {% else %}
       <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Caudex" rel="stylesheet">
-      <link rel="stylesheet" href="{{ prod_env.sitename }}/assets/css/main.css">
+      <link rel="stylesheet" href="/{{ prod_env.sitename }}/assets/css/main.css">
     {% endif %}
 
 
@@ -47,7 +47,7 @@
     {% if dev_env.env %}
       <script src="/assets/js/main.js"></script>
     {% else %}
-      <script src="{{ prod_env.sitename }}/assets/js/main.js"></script>
+      <script src="/{{ prod_env.sitename }}/assets/js/main.js"></script>
     {% endif %}
 
 
