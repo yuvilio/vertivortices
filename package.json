@@ -20,7 +20,7 @@
     "js": "./node_modules/rollup/bin/rollup -c",
     "templates:dev": "NODE_ENV=development DEBUG=metalsmith:* & node build/metalsmith.js",
     "templates": "NODE_ENV=production DEBUG=metalsmith:* & node build/metalsmith.js",
-    "publish": "NODE_ENV=production ./node_modules/gh-pages/bin/gh-pages -d dist -b gh-pages",
+    "publish": "NODE_ENV=production npm run build && ./node_modules/gh-pages/bin/gh-pages -d dist -b gh-pages",
     "lint:css": "./node_modules/stylelint/bin/stylelint.js assets/css/*.css",
     "lint:js": "./node_modules/standard/bin/cmd.js assets/js/**/*.js",
     "clean:dist": "rm -rf dist",
