@@ -27,13 +27,13 @@
 @import 'tachyons/src/_font-weight';
 @import 'tachyons/src/_forms';
 @import 'tachyons/src/_heights';
-/*@import 'tachyons/src/_letter-spacing';*/
+@import 'tachyons/src/_letter-spacing';
 @import 'tachyons/src/_line-height';
 @import 'tachyons/src/_links';
 @import 'tachyons/src/_lists';
 /*@import 'tachyons/src/_max-widths';*/
 @import 'tachyons/src/_widths';
-/*@import 'tachyons/src/_overflow';*/
+@import 'tachyons/src/_overflow';
 /*@import 'tachyons/src/_position';*/
 /*@import 'tachyons/src/_opacity';*/
 /*@import 'tachyons/src/_rotations';*/

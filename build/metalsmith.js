@@ -14,7 +14,7 @@ var nunjucks = require('nunjucks');
 var nunjucksDate = require('nunjucks-date');
 var metalsmith = Metalsmith(__dirname);
 var tags              = require('metalsmith-tags');
-
+var metalsmithPrism = require('metalsmith-prism');
 
 //configure templating engine you'll use with defaults
 //and filters
@@ -68,7 +68,11 @@ metalsmith
   // .use(markdown())
   .use(markdownit({
     typographer: true,
-    html: true
+    html: true,
+    langPrefix: 'language-'
+  }))
+  .use(metalsmithPrism({
+    lineNumbers: true
   }))
   .use(permalinks({
     // original options would act as the keys of a `default` linkset,

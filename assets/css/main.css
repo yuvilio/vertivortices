@@ -2,6 +2,7 @@
 
 /* vendor libraries */
 @import './_tachyons'; /* a-la-carte */
+@import 'prismjs/themes/prism-solarizedlight.css';
 
 @import 'misc/_type';
 @import 'components/_teaser-side';
