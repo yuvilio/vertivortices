@@ -19,6 +19,6 @@ time {
 }
 
 a {
-  color: orange;
+  color: var(--cinnabar-red);
   text-decoration: none;
 }

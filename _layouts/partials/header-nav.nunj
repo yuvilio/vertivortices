@@ -1,9 +1,16 @@
-<nav>
-  {% for nav_item in navs.header_nav.items %}
-    <div class="nav-item">
-      <a href="{{ nav_item.link }}">
-        {{ nav_item.title }}
-      </a>
+<header class="main-header">
+  <div class="mw9 center">
+    <div class="cf flex-ns flex-row">
+      <nav class="w-100 w-75-ns pv2 pv4-ns ph2 ph3-ns">
+        {% for nav_item in navs.header_nav.items %}
+          <div class="nav-item">
+            <a href="{{ nav_item.link }}">
+              {{ nav_item.title }}
+            </a>
+          </div>
+        {% endfor %}
+      </nav>
+
     </div>
-  {% endfor %}
-</nav>
+  </div>
+</header>
