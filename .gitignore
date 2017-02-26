@@ -7,3 +7,4 @@ bower_components/
 .publish/
 _layouts/test
 content/test
+content/uploads
