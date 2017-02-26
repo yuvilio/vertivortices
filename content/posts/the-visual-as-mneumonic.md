@@ -11,3 +11,6 @@ Visualizing is a powerful experience, unlike a linear read, One is presented wit
 <pre><code class="language-css">p { color: red }</code></pre>
 
 Those are probably more intension oriented questions
+
+image:
+![mobius](/uploads/2017/02/mobius-sample-1.svg)

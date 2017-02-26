@@ -26,7 +26,9 @@
     "clean:dist": "rm -rf dist",
     "clean:tmp": "rm -rf tmp",
     "clean": "npm run clean:dist && npm run clean:tmp",
-    "copy:dev": "rsync -avz --delete assets/fonts/ dist/assets/fonts/"
+    "copy:dev": "rsync -avz --delete assets/fonts/ dist/assets/fonts/ ; rsync -avz content/uploads/ dist/uploads/  ",
+    "copy": "rsync -avz --delete assets/fonts/ dist/assets/fonts/ ; rsync -avz content/uploads/ dist/uploads/  "
+
   },
   "repository": {
     "type": "git",
