@@ -12,7 +12,7 @@
     "css-mqpacker"
   ],
   "input": "./assets/css/main.css",
-  "output": "./dist/vertivortices/assets/css/main.css",
+  "output": "./dist/assets/css/main.css",
   "map": {
     "inline": false
   }

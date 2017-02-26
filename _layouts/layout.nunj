@@ -8,13 +8,13 @@
     <meta name="description" content="{{metatag_description}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="/assets/css/main.css">
+
     {% if dev_env.env %}
       {% include "partials/header-local.nunj" %}
-      <link rel="stylesheet" href="/assets/css/main.css">
     {% else %}
       <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Caudex" rel="stylesheet">
-      <link rel="stylesheet" href="/{{ prod_env.sitename }}/assets/css/main.css">
     {% endif %}
 
 
