@@ -13,7 +13,7 @@
 
           <div class="w-100 w-75-ns pv2 pv4-ns ph3 ph5-ns order-1-ns ">
             <header class="title lh-solid tc tl-ns f3 f2-ns mb2">
-              <a class=" " href="{{ post.path }}">
+              <a class=" " href="{{ post.path }}/">
                 {{post.title}}
               </a>
             </header>
@@ -31,7 +31,7 @@
 
             <div class="tags f5 i">
               {% for tag in post.tags %}
-                  <a href="/tag/{{tag.slug}}">
+                  <a href="/tag/{{tag.slug}}/">
                     {{tag.name}} {% if not loop.last %}, {% endif %}
                   </a>
               {% endfor %}
@@ -48,7 +48,7 @@
         <div class="mw9 center">
           <div class="cf">
             <aside class="fl pv2  w-100 w-third-ns">
-              <a class="title" href="{{ post.path }}">
+              <a class="title" href="{{ post.path }}/">
                 {{post.title}}
               </a>
 
