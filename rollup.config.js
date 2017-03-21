@@ -4,7 +4,7 @@ import uglify from 'rollup-plugin-uglify'
 
 export default {
   entry: './assets/js/main.js',
-  dest: './dist/vertivortices/assets/js/main.js',
+  dest: './dist/assets/js/main.js',
   format: 'es',
   plugins: [
     babel(),
