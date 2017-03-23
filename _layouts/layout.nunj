@@ -4,6 +4,8 @@
 {# figure slug from path#}
 {% set pathArray = path.split('/') %}
 {% set slug = pathArray[ pathArray.length - 1] %}
+{% set postType = "page" if (pathArray.length < 2) else pathArray[0] %} {# 'page', 'posts', ..#}
+
 
   <head>
 
@@ -34,8 +36,7 @@
 
   </head>
 
-  <body class=" slug-{{ slug }} {{ body_classes }}">
-
+  <body class="{{ postType }} slug-{{ slug }} {{ body_classes }}">
 
     <header>
 
