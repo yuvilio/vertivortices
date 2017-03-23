@@ -5,8 +5,8 @@
 @import 'prismjs/themes/prism-solarizedlight.css';
 @import './_tachyons'; /* a-la-carte */
 
-@import 'katex/dist/katex.css';
-@import './_fonts';
+/*@import 'katex/dist/katex.css';*/
+/*@import './_fonts';*/
 
 @import 'misc/_type';
 @import 'components/_teaser-side';

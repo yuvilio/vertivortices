@@ -38,7 +38,6 @@
 
   <body class="{{ postType }} slug-{{ slug }} {{ body_classes }}">
 
-    <div id="katex"></div>
     <header>
 
       {% include "partials/header-nav.nunj" %}
