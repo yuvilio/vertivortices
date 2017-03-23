@@ -5,12 +5,15 @@ import uglify from 'rollup-plugin-uglify'
 export default {
   entry: './assets/js/main.js',
   dest: './dist/assets/js/main.js',
-  format: 'es',
+  format: 'iife', //also available 'es', 'cjs'. using 'iife' for browser convenience.
   plugins: [
-    babel(),
-    resolve({
-      jsnext: true
+    babel({
+      // exclude: './node_modules/**',
     }),
-    uglify()
+    resolve({
+      jsnext: true,
+      main: true
+    }),
+    // uglify()
   ]
 }
