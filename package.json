@@ -28,7 +28,6 @@
     "clean": "npm run clean:dist && npm run clean:tmp",
     "copy:dev": "rsync -avz --delete assets/fonts/ dist/assets/fonts/ ; rsync -avz content/uploads/ dist/uploads/  ",
     "copy": "rsync -avz --delete assets/fonts/ dist/assets/fonts/ ; rsync -avz content/uploads/ dist/uploads/  "
-
   },
   "repository": {
     "type": "git",
@@ -79,6 +78,7 @@
     "postcss-nested": "^1.0.0",
     "rollup": "^0.39.2",
     "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-uglify": "^1.0.1",
     "tachyons": "^4.6.1"
