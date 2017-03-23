@@ -74,4 +74,4 @@
   </main>
 {% endblock %}
 
-{# example object dump: <pre> {{ tags | dump }}</pre> #}
+{# example object dump . handing for debug/console.log: <pre> {{ tags | dump }}</pre> #}

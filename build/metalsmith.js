@@ -33,6 +33,11 @@ var nunjucksEnv = nunjucks
   nunjucksEnv.addFilter('date', nunjucksDate)
   nunjucksDate.setDefaultFormat('MMMM Do, YYYY');
 
+  //global context object  . ex: {{ getContext().path }}
+  nunjucksEnv.addGlobal('getContext', function() {
+      return this.ctx;
+  });
+
 //metalsmith options
 var options = {
 

@@ -3,7 +3,6 @@
 
 {% block content %}
 
-
   <div class="main-wrap">
 
     <article class="pv2 pv4-ns ph3 ph5-ns w-80-ns">

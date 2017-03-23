@@ -1,6 +1,7 @@
 ---
 layout: pages/home.nunj
 title: vertivortices home
+body_classes: home
 permalink: false
 ctas:
   -
