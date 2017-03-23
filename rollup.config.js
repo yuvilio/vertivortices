@@ -8,18 +8,21 @@ export default {
   entry: './assets/js/main.js',
   dest: './dist/assets/js/main.js',
   format: 'iife', //also available 'es', 'cjs'. using 'iife' for browser convenience.
+  moduleName: 'vertivortices',
+
   plugins: [
     babel({
       exclude: 'node_modules/**' // "Ideally, you should only be transforming your own source code", not external dependencies
+    }),
+    commonjs({
+      include: 'node_modules/**',
+      sourceMap: true
     }),
     resolve({
       jsnext: true,
       main: true
     }),
-    commonjs({
-      include: 'node_modules/**',
-      sourceMap: true
-    })
+
     // uglify()
   ]
 }
