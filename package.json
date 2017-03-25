@@ -24,7 +24,7 @@
     "templates:dev": "NODE_ENV=development DEBUG=metalsmith:* & node build/metalsmith.js",
     "templates": "NODE_ENV=production DEBUG=metalsmith:* & node build/metalsmith.js",
     "publish": "NODE_ENV=production npm run build && ./node_modules/gh-pages/bin/gh-pages -d dist -b gh-pages",
-    "lint:  scss": "./node_modules/stylelint/bin/stylelint.js --ignore-path node_modules/**/*.css  assets/css/*.css",
+    "lint:css": "./node_modules/stylelint/bin/stylelint.js --ignore-path node_modules/**/*.css  assets/css/*.css",
     "lint:js": "./node_modules/standard/bin/cmd.js assets/js/**/*.js",
     "clean:dist": "rm -rf dist",
     "clean:tmp": "rm -rf tmp",

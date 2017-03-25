@@ -3,7 +3,6 @@
 /* vendor libraries */
 @import './_tachyons'; /* a-la-carte */
 @import 'prismjs/themes/prism-solarizedlight.css';
-@import './_tachyons'; /* a-la-carte */
 
 /*@import 'katex/dist/katex.css';*/
 /*@import './_fonts';*/
