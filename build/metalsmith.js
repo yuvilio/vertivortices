@@ -120,6 +120,16 @@ metalsmith
     ]
   }))
   .destination('../dist')
+  .use(
+    watch({
+      paths: {
+        '${source}/**/*': true,
+        '../_layouts/**/*': '**/*.nunj',
+        '../content/**/*': '**/*.md'
+      },
+      livereload: true,
+    })
+  )
   .build(function (err, files) {
     if (err) {
       console.log('Error!');
