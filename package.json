@@ -20,11 +20,18 @@
       "extensions": "js",
       "ignore": "",
       "quiet": false
+    },
+    "lint:css": {
+      "patterns": ["assets/css", "assets/css/components", "assets/css/misc", "assets/css/partials"],
+      "extensions": "css",
+      "ignore": "",
+      "quiet": false
     }
   },
   "scripts": {
     "watch": "npm-watch",
     "lint:js" : "standard assets/js/**/*.js",
+    "lint:css": "stylelint --ignore-path node_modules/**/*.css  assets/css/*.css",
     "start": "npm run watch:dev",
     "watch:dev": " npm run browsersync & npm run watch:js & npm run watch & npm run copy:dev & npm run watch:css  & npm run lint:js & npm run templates:dev",
     "browsersync": "browser-sync start --server dist --no-ui --no-notify --files dist/",
@@ -37,7 +44,6 @@
     "templates:dev": "NODE_ENV=development DEBUG=metalsmith:* & node build/metalsmith.js",
     "templates": "NODE_ENV=production DEBUG=metalsmith:* & node build/metalsmith.js",
     "publish": "NODE_ENV=production npm run build && gh-pages -d dist -b gh-pages",
-    "lint:css": "stylelint --ignore-path node_modules/**/*.css  assets/css/*.css",
     "clean:dist": "rm -rf dist",
     "clean:tmp": "rm -rf tmp",
     "clean": "npm run clean:dist && npm run clean:tmp",
