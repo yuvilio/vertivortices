@@ -7,8 +7,8 @@
     "node": "6.9.0"
   },
   "scripts": {
-    "start": "NODE_ENV=development DEBUG=metalsmith:* npm run browser_sync & npm run watch-templates & npm run watch-css & npm run watch-js & npm run copy:dev ",
-    "watch:dev": " npm run browsersync & npm run watch:js & npm run watch:css & npm run lint:css & npm run templates:dev",
+    "start": "npm run watch:dev",
+    "watch:dev": " npm run browsersync & npm run watch:js & npm run copy:dev & npm run watch:css & npm run lint:css & npm run templates:dev",
     "browsersync": "./node_modules/browser-sync/bin/browser-sync.js start --server dist --no-ui --no-notify --files dist/",
     "watch:js": "npm run js:dev -- --watch",
     "watch:css": "npm run styles:dev -- --watch --log",
@@ -53,6 +53,7 @@
     "gh-pages": "^0.12.0",
     "katex": "^0.7.1",
     "metalsmith": "^2.3.0",
+    "metalsmith-branch": "0.0.5",
     "metalsmith-collections": "^0.9.0",
     "metalsmith-drafts": "0.0.1",
     "metalsmith-excerpts": "^1.1.0",

@@ -15,6 +15,8 @@ var nunjucksDate = require('nunjucks-date');
 var metalsmith = Metalsmith(__dirname);
 var tags              = require('metalsmith-tags');
 var metalsmithPrism = require('metalsmith-prism');
+var branch = require("metalsmith-branch");
+
 
 //configure templating engine you'll use with defaults
 //and filters
