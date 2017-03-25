@@ -7,16 +7,26 @@
     "node": "6.9.0"
   },
   "bin": {
-    "browser-sync" : "./node_modules/browser-sync/bin/browser-sync.js",
-    "gh-pages" : "./node_modules/gh-pages/bin/gh-pages",
+    "browser-sync": "./node_modules/browser-sync/bin/browser-sync.js",
+    "gh-pages": "./node_modules/gh-pages/bin/gh-pages",
     "postcss": "./node_modules/postcss-cli/bin/postcss",
-    "rollup" : "./node_modules/rollup/bin/rollup",
-    "stylelint" : "./node_modules/stylelint/bin/stylelint.js",
-    "standard" : "./node_modules/standard/bin/cmd.js"
+    "rollup": "./node_modules/rollup/bin/rollup",
+    "stylelint": "./node_modules/stylelint/bin/stylelint.js",
+    "standard": "./node_modules/standard/bin/cmd.js"
+  },
+  "watch": {
+    "lint:js": {
+      "patterns": ["assets/js"],
+      "extensions": "js",
+      "ignore": "",
+      "quiet": false
+    }
   },
   "scripts": {
+    "watch": "npm-watch",
+    "lint:js" : "standard assets/js/**/*.js",
     "start": "npm run watch:dev",
-    "watch:dev": " npm run browsersync & npm run watch:js & npm run copy:dev & npm run watch:css & npm run lint:css & npm run lint:js & npm run templates:dev",
+    "watch:dev": " npm run browsersync & npm run watch:js & npm run watch & npm run copy:dev & npm run watch:css  & npm run lint:js & npm run templates:dev",
     "browsersync": "browser-sync start --server dist --no-ui --no-notify --files dist/",
     "watch:js": "npm run js:dev -- --watch",
     "watch:css": "npm run styles:dev -- --watch --log",
@@ -28,7 +38,6 @@
     "templates": "NODE_ENV=production DEBUG=metalsmith:* & node build/metalsmith.js",
     "publish": "NODE_ENV=production npm run build && gh-pages -d dist -b gh-pages",
     "lint:css": "stylelint --ignore-path node_modules/**/*.css  assets/css/*.css",
-    "lint:js": "standard assets/js/**/*.js",
     "clean:dist": "rm -rf dist",
     "clean:tmp": "rm -rf tmp",
     "clean": "npm run clean:dist && npm run clean:tmp",
@@ -74,6 +83,7 @@
     "metalsmith-prism": "^3.0.2",
     "metalsmith-tags": "^2.0.0",
     "metalsmith-watch": "^1.0.3",
+    "npm-watch": "^0.1.8",
     "nunjucks": "^3.0.0",
     "nunjucks-date": "^1.2.0",
     "postcss": "^5.2.8",
