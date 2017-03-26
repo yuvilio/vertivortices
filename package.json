@@ -12,17 +12,25 @@
     "postcss": "./node_modules/postcss-cli/bin/postcss",
     "rollup": "./node_modules/rollup/bin/rollup",
     "stylelint": "./node_modules/stylelint/bin/stylelint.js",
-    "standard": "./node_modules/standard/bin/cmd.js"
+    "standard": "./node_modules/standard/bin/cmd.js",
+    "remark": "./node_modules/remark-cli/cli.js"
   },
   "watch": {
     "lint:js": {
-      "patterns": ["assets/js"],
+      "patterns": [
+        "assets/js"
+      ],
       "extensions": "js",
       "ignore": "",
       "quiet": false
     },
     "lint:css": {
-      "patterns": ["assets/css", "assets/css/components", "assets/css/misc", "assets/css/partials"],
+      "patterns": [
+        "assets/css",
+        "assets/css/components",
+        "assets/css/misc",
+        "assets/css/partials"
+      ],
       "extensions": "css",
       "ignore": "",
       "quiet": false
@@ -30,13 +38,15 @@
   },
   "scripts": {
     "watch": "npm-watch",
-    "lint:js" : "standard assets/js/**/*.js",
+    "lint:js": "standard assets/js/**/*.js",
     "lint:css": "stylelint --ignore-path node_modules/**/*.css  assets/css/*.css",
+    "lint:md": "remark --quiet content/**/*.md",
     "start": "npm run watch:dev",
-    "watch:dev": " npm run browsersync & npm run watch:js & npm run watch & npm run copy:dev & npm run watch:css  & npm run lint:js & npm run templates:dev",
+    "watch:dev": " npm run browsersync & npm run watch:lint:md & npm run watch:js & npm run watch & npm run copy:dev & npm run watch:css  & npm run lint:js & npm run templates:dev",
     "browsersync": "browser-sync start --server dist --no-ui --no-notify --files dist/",
     "watch:js": "npm run js:dev -- --watch",
     "watch:css": "npm run styles:dev -- --watch --log",
+    "watch:lint:md": "npm run lint:md -- --watch",
     "styles:dev": "postcss -c postcss.dev.json",
     "styles": "postcss  -c postcss.prod.json",
     "js:dev": "rollup -c",
@@ -110,7 +120,10 @@
     "tachyons": "^4.6.1"
   },
   "dependencies": {
-    "prismjs": "^1.6.0"
+    "prismjs": "^1.6.0",
+    "remark-cli": "^3.0.0",
+    "remark-lint": "^6.0.0",
+    "remark-preset-lint-recommended": "^2.0.0"
   },
   "browserlist": [
     "last 2 versions",
